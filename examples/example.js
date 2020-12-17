@@ -63,8 +63,8 @@ let reconstructed = generateSpectrum(optimizedPeaks, {
   to,
   nbPoints: 5001,
 });
-reconstructed.x = Array.from(reconstructed.x)
-reconstructed.y = Array.from(reconstructed.y)
+reconstructed.x = Array.from(reconstructed.x);
+reconstructed.y = Array.from(reconstructed.y);
 
 original.x = Array.from(original.x);
 original.y = Array.from(original.y);

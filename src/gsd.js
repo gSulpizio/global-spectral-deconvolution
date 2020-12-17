@@ -1,5 +1,7 @@
 import { getShapeGenerator } from 'ml-peak-shape-generator';
 import SG from 'ml-savitzky-golay-generalized';
+import { writeFileSync } from 'fs';
+import { join } from 'path';
 
 /**
  * Global spectra deconvolution
@@ -108,6 +110,39 @@ export function gsd(data, options = {}) {
       derivative: 2,
     });
   }
+
+  //let dySpectrumRendered = { x: x, y: dY };
+  //let ddySpectrumRendered = { x: x, y: ddY };
+  let dySpectrumRendered = {
+    x: Array.from(x),
+    y: dY,
+  };
+  //console.log(dySpectrumRendered);
+  let ddySpectrumRendered = {
+    x: Array.from(x),
+    y: ddY,
+  };
+  /*
+  let ySpectrumRendered = {
+    x: Array.from(data.x),
+    y: Array.from(data.y),
+  };
+
+  writeFileSync(
+    '/home/giustinosulpizio/git/Cheminfo/global-spectral-deconvolution/examples/y.JSON',
+    JSON.stringify(ySpectrumRendered),
+    'utf8',
+  );
+  writeFileSync(
+    '/home/giustinosulpizio/git/Cheminfo/global-spectral-deconvolution/examples/dy.JSON',
+    JSON.stringify(dySpectrumRendered),
+    'utf8',
+  );
+  writeFileSync(
+    '/home/giustinosulpizio/git/Cheminfo/global-spectral-deconvolution/examples/ddy.JSON',
+    JSON.stringify(ddySpectrumRendered),
+    'utf8',
+  );*/
 
   const xData = x;
   const dX = x[1] - x[0];
