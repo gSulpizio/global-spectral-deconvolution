@@ -2,7 +2,7 @@
 import json
 import matplotlib.pyplot as plt
 
-'''
+
 with open('/home/giustinosulpizio/git/Cheminfo/global-spectral-deconvolution/examples/dy.JSON', 'r') as myfile:
     data = myfile.read()
 dY = json.loads(data)
@@ -29,12 +29,12 @@ ax2.set_ylabel('second derivative', color=color)
 ax2.plot(ddY['x'], ddY['y'], color=color)
 ax2.tick_params(axis='y', labelcolor=color)
 
-'''
+
 with open('/home/giustinosulpizio/git/Cheminfo/global-spectral-deconvolution/examples/y.JSON', 'r') as myfile:
     data = myfile.read()
 derivativeData2 = json.loads(data)
 
-'''
+
 ax3 = ax2.twinx()  # instantiate a second axes that shares the same x-axis
 
 color = 'tab:green'
@@ -46,6 +46,7 @@ ax3.tick_params(axis='y', labelcolor=color)
 
 fig.tight_layout()  # otherwise the right y-label is slightly clipped
 plt.show()
-'''
-plt.plot(derivativeData2['x'], derivativeData2['y'])
-plt.show()
+
+
+#plt.plot(derivativeData2['x'], derivativeData2['y'])
+# plt.show()

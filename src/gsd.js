@@ -122,11 +122,12 @@ export function gsd(data, options = {}) {
     x: Array.from(x),
     y: ddY,
   };
-  /*
+
   let ySpectrumRendered = {
     x: Array.from(data.x),
     y: Array.from(data.y),
   };
+  console.log(Array.from(ySpectrumRendered.x));
 
   writeFileSync(
     '/home/giustinosulpizio/git/Cheminfo/global-spectral-deconvolution/examples/y.JSON',
@@ -142,7 +143,7 @@ export function gsd(data, options = {}) {
     '/home/giustinosulpizio/git/Cheminfo/global-spectral-deconvolution/examples/ddy.JSON',
     JSON.stringify(ddySpectrumRendered),
     'utf8',
-  );*/
+  );
 
   const xData = x;
   const dX = x[1] - x[0];

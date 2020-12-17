@@ -8,10 +8,8 @@ describe('Global spectra deconvolution simulated broad spectra', () => {
   // Test case obtained from Pag 443, Chap 8.
   it('Should give 1 broad peak and 1 smaller peak', () => {
     const peaks = [
-      [
-        [530, 0.03, 120],
-        [140, 0.0025, 90],
-      ],
+      [530, 0.03, 120],
+      [140, 0.0025, 90],
     ];
 
     const spectrum = generateSpectrum(peaks, {
@@ -37,14 +35,13 @@ describe('Global spectra deconvolution simulated broad spectra', () => {
       x: Array.from(spectrum.x),
       y: Array.from(spectrum.y),
     };
-    console.log(ySpectrumRendered);
-
+    /*
     writeFileSync(
       '/home/giustinosulpizio/git/Cheminfo/global-spectral-deconvolution/examples/y.JSON',
       JSON.stringify(ySpectrumRendered),
       'utf8',
     );
-
+*/
     expect(result).toHaveLength(2);
 
     result.forEach((peak) => {
